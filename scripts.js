@@ -6,8 +6,15 @@ TODO: The backfill color should be selectable
 TODO: Grid size should be adjustable support up to 64
 */
 
+let color = 'black';
+
 createDivs(8, 'container');
 
+
+function setColor(value){
+    color = value;
+    console.log(`changed color to ${color}`);
+}
 
 // create grid of divs 
 function createDivs(gridSize, container) {
@@ -30,4 +37,24 @@ function createDivs(gridSize, container) {
   };
 }
 
+// get value from input and ensure correct size
+function getValue(){
+    let value = parseInt(document.getElementById("szinput").value);
+    if(value >64){
+        alert('pick a size that is 64 or less');
+        return;
+    }
+    else {
+        createDivs(value,'container');
+    }
+}
 
+// clear divs completely
+function resetDivs(){
+    document.getElementById("container").innerHTML = '';
+}
+
+// change elements background color to global color currently set
+function changeColor(element) {
+    element.style.cssText = `background-color:${color}`;
+}

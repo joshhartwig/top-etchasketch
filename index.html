@@ -18,8 +18,15 @@
         <div class="etchpad" id="container">
         </div>
         <div class="controls">
-
+            <div class="button-controls">
+                <button>Black</button><button onclick="setColor('white')">Eraser</button><button>Random</button><button onclick="resetDivs()">Reset</button>
+            </div>
+            <div class="size-input">
+                <input name="sizeinput" type="text" maxlength="10" id="szinput" class="controls-input"/>
+                <button onclick="getValue()">Change Size</button>
+            </div>
         </div>
+        <div class="test" onclick="changeColor(this)"></div>
     </div>
 </body>
 
