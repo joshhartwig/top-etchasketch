@@ -7,26 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch A Sketch</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
     <script src="scripts.js" defer></script>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <p><span class="header-title">Etch A Sketch</span></p>
+            <p><span class="title">Etch A Sketch</span></p>
         </div>
         <div class="etchpad" id="container">
         </div>
+        <div class="instructions">
+            <p>To begin just click each square. If you want to create a new grid you can use the input box below to change size up to 64 cells. Click reset if you get stuck.</p>
+        </div>
         <div class="controls">
             <div class="button-controls">
-                <button>Black</button><button onclick="setColor('white')">Eraser</button><button>Random</button><button onclick="resetDivs()">Reset</button>
+                <button onclick="setColor('black')">Black</button><button onclick="setColor('white')">Eraser</button><button onclick="randomizeColor()">Random</button><button onclick="resetDivs()">Reset</button>
             </div>
             <div class="size-input">
                 <input name="sizeinput" type="text" maxlength="10" id="szinput" class="controls-input"/>
                 <button onclick="getValue()">Change Size</button>
             </div>
         </div>
-        <div class="test" onclick="changeColor(this)"></div>
     </div>
 </body>
 

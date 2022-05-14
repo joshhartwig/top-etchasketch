@@ -1,22 +1,29 @@
 body {
     margin: 0;
+    background-color: #112B3C;
 }
 
 .container {
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
 
 .etchpad {
     display: flex;
+    align-items: center;
     justify-content: center;
+    width: 400px;
+    height: 400px;
     margin-bottom: 50px;
+    background-color: #EFEFEF;
 }
 
 .header {
-    background-color: black;
-    color: white;
     margin-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .controls {
@@ -25,9 +32,23 @@ body {
     align-items: center;
 }
 
-.test {
-    width:100px;
-    height:100px;
-    background-color: bisque;
+.title {
+    font-family: 'Zen Loop', cursive;
+    font-size:120px;
+    font-weight: bold;
+    color: #F66B0E;  
 }
+
+.instructions {
+    width: 20%;
+    font-family: 'Zen Loop', cursive;
+    font-size:32px;
+    color: #F66B0E;  
+}
+
+.footer {
+    background-color: black;
+}
+
+/* palette link https://colorhunt.co/palette/112b3c205375f66b0eefefef */
 
