@@ -4,8 +4,8 @@ TODO: Add footer
 TODO: Adjust container size on the fly to change as grid changes. IE Width of grid cells should scale
 
 */
-const pixelHeight = 10;
-const pixelWidth = 10;
+const gridPixelHeight = 10;
+const gridPixelWidth = 10;
 let color = 'black';
 
 createDivs(8, 'container');
@@ -29,13 +29,17 @@ function createDivs(gridSize, container) {
       let col = document.createElement('div');
       col.classList.add(`r${x}`);
       col.classList.add(`c${y}`);
-      col.style.cssText = `outline: 1px dashed #f90; width: ${pixelWidth}px; height: ${pixelHeight}px`;
+      col.style.cssText = `outline: 1px dashed #f90; width: ${gridPixelWidth}px; height: ${gridPixelHeight}px;`;
       col.addEventListener('click', function () {
         changeColor(this);
       });
       row.appendChild(col);
     };
 
+    //resize container dynamically for grid size gridsize * pixelHeight/width
+    //cont.style.cssText = `width: ${gridSize * gridPixelWidth}; height: ${gridSize = gridPixelHeight};`;
+    cont.style.width = `${gridSize * gridPixelWidth}`;
+    cont.style.height = `${gridSize * gridPixelHeight}`;
     cont.appendChild(row);
   };
 }
