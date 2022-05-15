@@ -4,15 +4,16 @@ TODO: Add footer
 TODO: Adjust container size on the fly to change as grid changes. IE Width of grid cells should scale
 
 */
-
+const pixelHeight = 10;
+const pixelWidth = 10;
 let color = 'black';
 
 createDivs(8, 'container');
 
 
-function setColor(value){
-    color = value;
-    console.log(`changed color to ${color}`);
+function setColor(value) {
+  color = value;
+  console.log(`changed color to ${color}`);
 }
 
 // create grid of divs 
@@ -28,9 +29,9 @@ function createDivs(gridSize, container) {
       let col = document.createElement('div');
       col.classList.add(`r${x}`);
       col.classList.add(`c${y}`);
-      col.style.cssText = 'outline: 1px dashed #f90; width: 20px; height: 20px';
-      col.addEventListener('click',function(){
-          changeColor(this);
+      col.style.cssText = `outline: 1px dashed #f90; width: ${pixelWidth}px; height: ${pixelHeight}px`;
+      col.addEventListener('click', function () {
+        changeColor(this);
       });
       row.appendChild(col);
     };
@@ -40,30 +41,29 @@ function createDivs(gridSize, container) {
 }
 
 // get value from input and ensure correct size
-function getValue(){
-    let value = parseInt(document.getElementById("szinput").value);
-    if(value >64){
-        alert('pick a size that is 64 or less');
-        return;
-    }
-    else {
-        createDivs(value,'container');
-    }
+function getValue() {
+  let value = parseInt(document.getElementById("szinput").value);
+  if (value > 64) {
+    alert('pick a size that is 64 or less');
+    return;
+  }
+  else {
+    createDivs(value, 'container');
+  }
 }
 
 // clear divs completely
-function resetDivs(){
-    document.getElementById("container").innerHTML = '';
+function resetDivs() {
+  document.getElementById("container").innerHTML = '';
 }
 
 // change elements background color to global color currently set
 function changeColor(element) {
-    //element.style.cssText = `background-color:${color};`;
-    element.style.backgroundColor = color;
+  element.style.backgroundColor = color;
 }
 
-function randomizeColor(){
-    const colors = ["aqua","blue","fuchsia","gray","green","lime","maroon","navy","olive","purple","red","silver","teal","yellow"];
-    let r = Math.floor((Math.random() * colors.length) + 1);
-    color = colors[r];
+function randomizeColor() {
+  const colors = ["aqua", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "yellow"];
+  let r = Math.floor((Math.random() * colors.length) + 1);
+  color = colors[r];
 }
