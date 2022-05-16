@@ -1,14 +1,9 @@
-/*
-TODO: Wrap styling buttons and colors
-TODO: Add footer
-TODO: Adjust container size on the fly to change as grid changes. IE Width of grid cells should scale
 
-*/
 const gridPixelHeight = 10;
 const gridPixelWidth = 10;
 let color = 'black';
 
-createDivs(8, 'container');
+createDivs(40, 'container');
 
 
 function setColor(value) {
@@ -17,9 +12,12 @@ function setColor(value) {
 }
 
 // create grid of divs 
-function createDivs(gridSize, container) {
-  rows = gridSize;
-  cols = gridSize;
+function createDivs(gridSize = 40, container) {
+  let rows = gridSize;
+  let cols = gridSize;
+
+  resetDivs();
+
   const cont = document.querySelector(`#${container}`);
   for (let x = 0; x < rows; x++) {
     let row = document.createElement('div');
@@ -37,9 +35,17 @@ function createDivs(gridSize, container) {
     };
 
     //resize container dynamically for grid size gridsize * pixelHeight/width
-    //cont.style.cssText = `width: ${gridSize * gridPixelWidth}; height: ${gridSize = gridPixelHeight};`;
-    cont.style.width = `${gridSize * gridPixelWidth}`;
-    cont.style.height = `${gridSize * gridPixelHeight}`;
+    cont.style.cssText = `
+        width: ${gridSize * gridPixelWidth + 20}px; 
+        height: ${gridSize * gridPixelHeight + 20}px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+        background-color: #EFEFEF;
+      `;
+    //cont.style.width = `"${gridSize * gridPixelWidth}px"`;
+    //cont.style.height = `"${gridSize * gridPixelHeight}px"`;
     cont.appendChild(row);
   };
 }
