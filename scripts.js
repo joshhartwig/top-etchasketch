@@ -31,6 +31,9 @@ function createDivs(gridSize = 40, container) {
       col.addEventListener('click', function () {
         changeColor(this);
       });
+      col.addEventListener('mousedown', function () {
+        changeColor(this);
+      });
       row.appendChild(col);
     };
 
