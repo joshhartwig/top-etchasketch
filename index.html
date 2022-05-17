@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"></script>
     <script src="scripts.js" defer></script>
 </head>
 
@@ -28,15 +31,23 @@
         </div>
         <div class="controls">
             <div class="button-controls">
-                <button onclick="setColor('black')">Black</button><button
-                    onclick="setColor('white')">Eraser</button><button onclick="randomizeColor()">Random</button><button
-                    onclick="resetDivs()">Reset</button>
+                <button class="button" onclick="setColor('black')">Black</button>
+                <button class="button" onclick="setColor('#EFEFEF')">Eraser</button>
+                <button class="button" onclick="randomizeColor()">Random Color</button>
+                <button class="button" onclick="resetDivs()">Reset</button>
             </div>
             <div class="size-input">
                 <input name="sizeinput" type="text" maxlength="10" id="szinput" class="controls-input" />
                 <button onclick="getValue()">Change Size</button>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <p>
+            Josh Hartwig
+            <a href="https://github.com/joshhartwig" target="_blank">
+                <i class="fab fa-github"></i></a>
+          </p>       
     </div>
 </body>
 

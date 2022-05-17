@@ -1,6 +1,11 @@
-
+/*
+TODO: Fix eraser color not being default grid color
+TODO: Fix reset
+*/
 const gridPixelHeight = 10;
 const gridPixelWidth = 10;
+const defaultGridSize = 40;
+
 let color = 'black';
 
 createDivs(40, 'container');
@@ -8,7 +13,6 @@ createDivs(40, 'container');
 
 function setColor(value) {
   color = value;
-  console.log(`changed color to ${color}`);
 }
 
 // create grid of divs 
@@ -16,8 +20,10 @@ function createDivs(gridSize = 40, container) {
   let rows = gridSize;
   let cols = gridSize;
 
+  //reset content as it might change dimensions of container
   resetDivs();
 
+  //build rows and columns of divs
   const cont = document.querySelector(`#${container}`);
   for (let x = 0; x < rows; x++) {
     let row = document.createElement('div');
@@ -47,8 +53,7 @@ function createDivs(gridSize = 40, container) {
         margin-bottom: 50px;
         background-color: #EFEFEF;
       `;
-    //cont.style.width = `"${gridSize * gridPixelWidth}px"`;
-    //cont.style.height = `"${gridSize * gridPixelHeight}px"`;
+
     cont.appendChild(row);
   };
 }
