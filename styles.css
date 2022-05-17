@@ -1,32 +1,39 @@
-html, body {
-    height: 100%;
+html,
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     background-color: #112B3C;
+    font-family: 'Roboto', sans-serif;
 }
 
-a, a:hover, a:focus, a:active {
+a,
+a:hover,
+a:focus,
+a:active {
     text-decoration: none;
     color: inherit;
 }
 
 .container {
+    flex: 1;
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-height: 100%;
-    margin-bottom: -50px;
 }
 
 .etchpad {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     background-color: #EFEFEF;
 }
 
 .header {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 20px;
     padding-top: 10px;
     text-align: center;
@@ -40,19 +47,20 @@ a, a:hover, a:focus, a:active {
 
 .title {
     font-family: 'Zen Loop', cursive;
-    font-size: 120px;
+    font-size: 100px;
     font-weight: bold;
     color: #F66B0E;
 }
 
 .instructions {
-    width: 20%;
-    font-family: 'Zen Loop', cursive;
-    font-size: 32px;
-    color: #F66B0E;
+    width: 50%;
+    font-size: 18px;
+    color: #EFEFEF;
+    margin-top: -30px;
 }
 
 .footer {
+    flex-shrink: 0;
     background-color: #112B3C;
     color: #EFEFEF;
     height: 50px;
@@ -60,26 +68,27 @@ a, a:hover, a:focus, a:active {
 }
 
 .button {
-	background-color: #F66B0E;
-	border-radius:22px;
-	border:1px solid #F66B0E;
-	display:inline-block;
-	cursor:pointer;
-	color: #EFEFEF;
-	font-family: 'Zen Loop';
-	font-size:20px;
-	padding:16px 22px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+    background-color: #F66B0E;
+    border-radius: 14px;
+    border: 1px solid #F66B0E;
+    display: inline-block;
+    cursor: pointer;
+    color: #EFEFEF;
+    font-size: 12px;
+    padding: 6px 23px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #2f6627;
+    margin-right: 10px;
 }
 
 .button:hover {
-	background-color:#5cbf2a;
+    background-color: #5cbf2a;
 
 }
+
 .button:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
 .button-controls {
