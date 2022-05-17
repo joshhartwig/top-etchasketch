@@ -1,5 +1,5 @@
 /*
-TODO: Fix eraser color not being default grid color
+
 TODO: Fix reset
 */
 const gridPixelHeight = 10;
@@ -37,7 +37,7 @@ function createDivs(gridSize = 40, container) {
       col.addEventListener('click', function () {
         changeColor(this);
       });
-      col.addEventListener('mousedown', function () {
+      col.addEventListener('mouseover', function () {
         changeColor(this);
       });
       row.appendChild(col);
